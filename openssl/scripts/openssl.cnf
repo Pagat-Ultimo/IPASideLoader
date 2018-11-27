@@ -1,0 +1,28 @@
+#
+# OpenSSL example configuration file.
+# This is mostly being used for generation of certificate requests.
+#
+
+# This definition stops the following lines choking if HOME isn't
+# defined.
+HOME			= .
+RANDFILE		= $ENV::HOME/.rnd
+
+[req]
+default_bits=2048
+encrypt_key=no
+default_md=sha256
+distinguished_name=req_subj
+[req_subj]
+commonName="www.ipasideloader.net"
+emailAddress="side@lodaer.net"
+countryName="AT"
+countryName_default=AT
+stateOrProvinceName="Vienna"
+stateOrProvinceName_default=Vienna
+localityName="Vienna"
+localityName_default=Vienna
+organizationName="ipasideloader"
+organizationName_default=ipasideloader
+organizationalUnitName="users"
+organizationalUnitName_default=users
