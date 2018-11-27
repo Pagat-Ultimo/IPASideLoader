@@ -173,5 +173,16 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <OpensslFiles Include="..\..\openssl\**\*.*" />
+  </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <Target Name="AfterBuild">
+    <Copy SourceFiles="@(OpensslFiles)" SkipUnchangedFiles="true" DestinationFiles="@(OpensslFiles->'$(OutputPath)openssl\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

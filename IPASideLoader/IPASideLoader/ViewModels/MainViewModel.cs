@@ -168,6 +168,12 @@ namespace IPASideLoader.ViewModels
         {
             if (LoadApplicationSettings() == false)
                 Application.Current.MainWindow?.Close();
+            if (!File.Exists(FilePaths.CertDirectory))
+                Directory.CreateDirectory(FilePaths.CertDirectory);
+            if (!File.Exists(FilePaths.CaDirectory))
+                Directory.CreateDirectory(FilePaths.CaDirectory);
+            if (!File.Exists(FilePaths.CertLocalDirectory))
+                Directory.CreateDirectory(FilePaths.CertLocalDirectory);
         }
 
         #endregion

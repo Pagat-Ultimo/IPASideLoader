@@ -27,5 +27,9 @@ namespace IPASideLoader.Constants
         public static string CaCert => @"openssl/certificates/ca/sideCA.cer";
         public static string CaCertWebPath => @"web/sideCA.cer";
 
+        public static string CertDirectory => @"openssl/certificates";
+        public static string CaDirectory => @"openssl/certificates/ca";
+        public static string CertLocalDirectory => @"openssl/certificates/local";
+
     }
 }
